@@ -28,7 +28,7 @@
     card.setAttribute('aria-haspopup', 'dialog');
     const top = create('div', 'service-top');
     top.innerHTML = `<svg class="service-icon" viewBox="0 0 28 28" aria-hidden="true">${icons[service.icon]}</svg><span>0${index + 1}</span>`;
-    card.append(top, create('h3', '', service.title), create('p', '', service.description), create('span', 'service-more', 'Conocer trámites ↗'));
+    card.append(top, create('h3', '', service.title), create('p', '', service.description), create('span', 'service-more', 'Conocer trámites '));
     card.addEventListener('click', () => {
       document.getElementById('dialog-title').textContent = service.title;
       document.getElementById('dialog-description').textContent = service.description;
@@ -56,7 +56,7 @@
     stars.setAttribute('aria-label', '5 de 5 estrellas, según la imagen original');
     const quote = create('blockquote', '', review.text);
     if (review.language) quote.lang = review.language;
-    const source = create('a', '', 'Ver publicación original ↗');
+    const source = create('a', '', 'Ver publicación original ');
     source.href = review.url;
     source.target = '_blank';
     source.rel = 'noopener';
@@ -124,8 +124,8 @@
       if (direction < 0 && viewport.scrollLeft < distance) viewport.scrollLeft += cycleWidth;
       viewport.scrollBy({ left: direction * distance, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
     }
-    controls.querySelector('[data-direction="prev"]').addEventListener('click', () => step(-1));
-    controls.querySelector('[data-direction="next"]').addEventListener('click', () => step(1));
+    controls.querySelector('[data-direction="prev"]')?.addEventListener('click', () => step(-1));
+    controls.querySelector('[data-direction="next"]')?.addEventListener('click', () => step(1));
     pauseButton.addEventListener('click', () => setPause(!paused));
     reducedMotion.addEventListener('change', () => setPause(reducedMotion.matches));
     setPause(paused);
