@@ -339,3 +339,7 @@ dialog { background: #151412; }
   .photo-frame { height: 355px; }
   .experience-card { padding: 18px 22px; gap: 20px; }
 }
+
+/* Readable focus and pause controls on the dark palette */
+.skip-link { color: #171412; }
+.carousel-controls button:hover { background: #c69b76; color: #14100d; }
