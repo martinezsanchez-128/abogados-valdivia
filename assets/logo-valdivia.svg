@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 170" fill="none">
+  <title>Valdivia — Abogados Migratorios, desde 1984</title>
+  <!-- Geometric V retains the original monogram; the split stroke adds a contemporary cut. -->
+  <path fill="#f5f5f3" d="M139 13h21l22 55 13-31h21l-34 75z"/>
+  <path fill="#f5f5f3" d="M202 13h22l-7 17h-22z"/>
+  <g fill="#d1d2d3" font-family="Arial,Helvetica,sans-serif" font-size="9" letter-spacing="3">
+    <text x="69" y="50">ESTD.</text><text x="255" y="50">1984</text>
+  </g>
+  <text x="180" y="126" text-anchor="middle" fill="#f5f5f3" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="900" font-style="italic" letter-spacing="2" textLength="302" lengthAdjust="spacingAndGlyphs">VALDIVIA</text>
+  <path stroke="#f5f5f3" stroke-opacity=".5" d="M29 136h302"/>
+  <text x="180" y="156" text-anchor="middle" fill="#d1d2d3" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="500" letter-spacing="3.4" textLength="294" lengthAdjust="spacing">ABOGADOS MIGRATORIOS</text>
+</svg>
