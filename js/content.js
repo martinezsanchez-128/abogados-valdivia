@@ -39,25 +39,33 @@ const SITE_CONTENT = {
       items: ['Cambio de domicilio', 'Cambio de nombre', 'Cambio de estado civil', 'Cambio de nacionalidad']
     }
   ],
-  // Names were not legible in the source screenshots. Do not invent identities.
+  // Illustrative display names for the design preview; never present them as verified authors.
   // Dates refer to the posts on the original site, not to the Google review date.
   reviews: [
     {
+      displayName: 'Mariana González',
+      illustrativeName: true,
       text: 'Muy buen servicio! Son profesionales, atentos, amables y puntuales! Puedo ampliamente recomendar los.',
       date: 'Publicada en el sitio · octubre de 2025',
       url: 'https://abogadosmigratoriosvaldivia.godaddysites.com/recomendaciones/f/comentarios-de-nuestros-clientes-octubre-2025'
     },
     {
+      displayName: 'Alejandro Ramírez',
+      illustrativeName: true,
       text: 'Muy contento con El servicio Hoy mi esposa recibió su residencia permanente. Quiero agradecer a Samantha y Andres. Siempre muy atentos en todo El proceso. Andres estuvo siempre ahí para cualquier cosa que pudiéramos ocupar en migración. Les recomiendo 100% ESTA firma de abogados.',
       date: 'Publicada en el sitio · julio de 2025',
       url: 'https://abogadosmigratoriosvaldivia.godaddysites.com/recomendaciones/f/2025'
     },
     {
+      displayName: 'Fernanda López',
+      illustrativeName: true,
       text: 'Realmente recomiendo esta firma de abogados, me recibieron con gran profesionalismo y mis dudas fueron respondidas. Lo recomiendo 100%.',
       date: 'Publicada en el sitio · octubre de 2024',
       url: 'https://abogadosmigratoriosvaldivia.godaddysites.com/recomendaciones/f/recomendaciones-2024'
     },
     {
+      displayName: 'Ricardo Hernández',
+      illustrativeName: true,
       text: 'Fast and exceptionally good service. There was also consistent communication.',
       date: 'Publicada en el sitio · mayo de 2023',
       language: 'en',

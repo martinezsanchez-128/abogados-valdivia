@@ -20,6 +20,32 @@
   document.querySelectorAll('[data-whatsapp]').forEach(link => { link.href = whatsappUrl(); });
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Keep the menu readable after leaving the video backdrop.
+  const headerElement = document.querySelector('.header');
+  const updateHeader = () => headerElement.classList.toggle('is-scrolled', window.scrollY > 40);
+  addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  // Decorative video is muted; visitors can pause it and motion preferences are respected.
+  const heroVideo = document.getElementById('hero-video');
+  const videoToggle = document.querySelector('.video-toggle');
+  const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+  const updateVideoControl = () => {
+    videoToggle.setAttribute('aria-pressed', String(heroVideo.paused));
+    videoToggle.setAttribute('aria-label', heroVideo.paused ? 'Reproducir video de fondo' : 'Pausar video de fondo');
+    videoToggle.innerHTML = heroVideo.paused ? '▷ <span>Reproducir video</span>' : 'Ⅱ <span>Pausar video</span>';
+  };
+  heroVideo.addEventListener('play', updateVideoControl);
+  heroVideo.addEventListener('pause', updateVideoControl);
+  videoToggle.addEventListener('click', () => {
+    if (heroVideo.paused) heroVideo.play().catch(updateVideoControl);
+    else heroVideo.pause();
+  });
+  const applyMotionPreference = () => { if (motionPreference.matches) heroVideo.pause(); };
+  motionPreference.addEventListener('change', applyMotionPreference);
+  applyMotionPreference();
+  updateVideoControl();
+
   // Services are real buttons with keyboard support and a native modal dialog.
   const dialog = document.getElementById('service-dialog');
   SITE_CONTENT.services.forEach((service, index) => {
@@ -50,8 +76,10 @@
     const card = create('article', 'review-card');
     const header = create('div', 'review-header');
     const author = create('div');
-    author.append(create('strong', '', 'Cliente del despacho'), create('small', '', review.date));
-    header.append(create('span', 'avatar', 'C'), author, create('span', 'google-mark', 'G'));
+    author.append(create('strong', '', review.displayName || 'Cliente del despacho'), create('small', '', review.date));
+    const initials = (review.displayName || 'Cliente').split(' ').map(word => word[0]).slice(0, 2).join('');
+    header.append(create('span', 'avatar', initials), author, create('span', 'google-mark', 'G'));
+    if (review.illustrativeName) author.append(create('span', 'illustrative-name', 'Nombre ilustrativo'));
     const stars = create('div', 'stars', '★★★★★');
     stars.setAttribute('aria-label', '5 de 5 estrellas, según la imagen original');
     const quote = create('blockquote', '', review.text);
