@@ -577,6 +577,21 @@ nav a.active::after {
 .carousel-controls [data-action] {
   font-size: 11px;
 }
+
+.carousel-controls [data-action='pause'] {
+  display: grid;
+  place-items: center;
+}
+
+.carousel-control-icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .review-card {
   width: 365px;
   background: white;

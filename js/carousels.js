@@ -4,6 +4,12 @@
 
   const SPEED_PIXELS_PER_SECOND = 23;
   const MAX_FRAME_DURATION_MS = 40;
+  // SVG avoids platform-specific emoji colors on mobile and tablet.
+  const CONTROL_ICONS = {
+    play: '<svg class="carousel-control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5 19 12 8 19Z" /></svg>',
+    pause:
+      '<svg class="carousel-control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" /></svg>',
+  };
 
   function setupCarousel(viewport) {
     const track = viewport.firstElementChild;
@@ -43,7 +49,7 @@
       paused = value;
       position = viewport.scrollLeft;
       viewport.scrollTo({ left: position, behavior: 'instant' });
-      pauseButton.textContent = paused ? '▶' : 'Ⅱ';
+      pauseButton.innerHTML = paused ? CONTROL_ICONS.play : CONTROL_ICONS.pause;
       pauseButton.setAttribute('aria-label', `${paused ? 'Reanudar' : 'Pausar'} ${label}`);
       pauseButton.setAttribute('aria-pressed', String(paused));
     }
