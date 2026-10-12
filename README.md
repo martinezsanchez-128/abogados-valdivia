@@ -19,14 +19,27 @@ Visita http://localhost:4173.
 - `index.html`: estructura semántica, navegación y secciones.
 - `css/styles.css`: estilos agrupados, variables de diseño, responsive y movimiento reducido.
 - `js/content.js`: servicios, recomendaciones, clientes y número de WhatsApp.
-- `js/main.js`: renderizado de tarjetas, carruseles, diálogo y menú móvil.
+- `js/main.js`: renderizado de tarjetas, diálogo y menú móvil.
+- `js/carousels.js`: reproducción, pausa, navegación manual y bucle de los carruseles.
 - `assets/`: logo y fotografías originales, logos de clientes en SVG.
 
 ## Edición
 
 Edita `SITE_CONTENT` en `js/content.js` para cambiar servicios, reseñas, logos o WhatsApp. Los servicios se muestran en seis categorías; el detalle incluye los trámites publicados en el sitio original. El contacto usa WhatsApp +52 81 8088 2372 y teléfono 81 8344 9121, ambos publicados en la referencia.
 
-Los carruseles avanzan visualmente de izquierda a derecha. Se pausan al pasar el cursor, enfocar con teclado, deslizar en móvil o usar las flechas. El botón central permite pausar y reanudar. Respetan `prefers-reduced-motion`.
+Los carruseles avanzan visualmente de izquierda a derecha. Se pausan al enfocar con teclado, deslizar en móvil o usar las flechas. El cursor no interrumpe la reproducción. El botón central permite pausar y reanudar. Respetan `prefers-reduced-motion`.
+
+## Comprobaciones de desarrollo
+
+Con Node.js instalado, ejecuta las pruebas sin instalar dependencias:
+
+```sh
+node --test tests/carousels.test.cjs
+```
+
+Las pruebas simulan anchos de 320 a 1440 píxeles, redondeo del desplazamiento, bucles prolongados, reproducción/pausa, flechas, teclado, tacto, cambios de orientación y movimiento reducido. No sustituyen una revisión visual en navegadores reales.
+
+El formato del HTML, CSS y JavaScript sigue `.prettierrc.json`. La lógica de los carruseles está separada del renderizado del contenido para facilitar su mantenimiento.
 
 ## Fuentes y alcance editorial
 
